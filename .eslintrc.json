@@ -12,12 +12,14 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 12,
+    "ecmaVersion": 11,
     "sourceType": "module"
   },
   "plugins": ["react", "react-hooks", "prettier"],
   "rules": {
     "prettier/prettier": "error",
+    "react/prop-types": "off",
+    "react/style-prop-object": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
     "react/jsx-props-no-spreading": "off",
@@ -28,7 +30,9 @@
         "extensions": [".tsx"]
       }
     ],
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/no-extraneous-dependencies": ["off", { "devDependencies": true }],
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/explicit-module-boundary-types": ["off"],
     "import/prefer-default-export": "off",
     "import/extensions": [
       "error",
