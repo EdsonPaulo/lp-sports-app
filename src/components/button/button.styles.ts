@@ -14,6 +14,7 @@ export const StyledText = styled(Text)<{ primary?: boolean }>`
 `;
 
 export const StyledButton = styled(RectButton)<ButtonProps>`
+  flex: 1;
   background-color: ${props =>
     props.primary ? props.theme.colors.accent : 'transparent'};
   border-radius: ${props => props.theme.borderRadius.md};

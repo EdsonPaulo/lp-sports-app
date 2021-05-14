@@ -1,7 +1,7 @@
 import { DefaultTheme } from 'styled-components';
 
-import COLORS from './colors';
-import FONT_FAMILY from './fonts';
+import COLORS from '../colors';
+import FONT_FAMILY from '../fonts';
 
 const LPTheme: DefaultTheme = {
   borderRadius: {
@@ -44,4 +44,4 @@ const LPTheme: DefaultTheme = {
   },
 };
 
-export { LPTheme };
+export default LPTheme;

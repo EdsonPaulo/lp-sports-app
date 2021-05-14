@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React from 'react';
 import { enableScreens } from 'react-native-screens';
+import { ThemeProvider } from 'styled-components/native';
 import AppLoading from 'expo-app-loading';
 import {
   useFonts,
@@ -13,7 +14,15 @@ import {
   RobotoSlab_700Bold,
 } from '@expo-google-fonts/roboto-slab';
 
-import { SafeArea, Container, H1, Text } from './src/components';
+import {
+  SafeArea,
+  Container,
+  H1,
+  Text,
+  Button,
+  RowView,
+} from './src/components';
+import theme from './src/constants/theme';
 
 enableScreens();
 
@@ -28,15 +37,22 @@ const App = () => {
 
   if (!fontsLoaded) return <AppLoading />;
   return (
-    <SafeAreaProvider>
-      <SafeArea>
-        <Container>
-          <H1>Open up App.tsx to start working on your app!</H1>
-          <Text>Open up App.tsx to start working on your app!</Text>
-          <StatusBar style="auto" />
-        </Container>
-      </SafeArea>
-    </SafeAreaProvider>
+    <ThemeProvider theme={theme}>
+      <SafeAreaProvider>
+        <SafeArea>
+          <Container>
+            <H1 fontSize="40px">LP SPORTS</H1>
+            <H1>Open up App.tsx!</H1>
+            <Text>Open up App.tsx to start working on your app!</Text>
+            <RowView>
+              <Button primary  label="Login" />
+              <Button label="Criar conta" />
+            </RowView>
+            <StatusBar style="auto" />
+          </Container>
+        </SafeArea>
+      </SafeAreaProvider>
+    </ThemeProvider>
   );
 };
 export default App;

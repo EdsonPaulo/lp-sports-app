@@ -1,6 +1,6 @@
 import * as styledComponents from 'styled-components/native';
 
-import { LPTheme } from './src/constants/themes';
+import LPTheme from './src/constants/theme';
 
 const {
   default: styled,
