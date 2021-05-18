@@ -11,6 +11,17 @@ const LPTheme: DefaultTheme = {
     lg: '14px',
   },
 
+  metrics: {
+    iconSize: {
+      xs: 7,
+      sm: 12,
+      md: 18,
+      lg: 25,
+      xl: 30,
+      xxl: 45,
+    },
+  },
+
   fonts: {
     family: FONT_FAMILY,
     size: {
@@ -31,6 +42,7 @@ const LPTheme: DefaultTheme = {
     borderColor: COLORS.grayLight,
     backgroundPrimary: COLORS.backgroundPrimary,
     backgroundSecondary: COLORS.backgroundSecondary,
+    foreground: COLORS.white,
 
     textLight: COLORS.white,
     textDark: COLORS.black,

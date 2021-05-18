@@ -9,6 +9,17 @@ declare module 'styled-components' {
       lg: string;
     };
 
+    metrics: {
+      iconSize: {
+        xs: number;
+        sm: number;
+        md: number;
+        lg: number;
+        xl: number;
+        xxl: number;
+      };
+    };
+
     fonts: {
       family: {
         RobotoSlabLight: string;
@@ -35,6 +46,7 @@ declare module 'styled-components' {
 
       backgroundPrimary: string;
       backgroundSecondary: string;
+      foreground: string;
 
       borderColor: string;
 
