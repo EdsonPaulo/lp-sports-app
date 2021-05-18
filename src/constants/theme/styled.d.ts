@@ -18,18 +18,8 @@ declare module 'styled-components' {
         xl: number;
         xxl: number;
       };
-    };
 
-    fonts: {
-      family: {
-        RobotoSlabLight: string;
-        RobotoSlabRegular: string;
-        RobotoSlabMedium: string;
-        RobotoSlabSemiBold: string;
-        RobotoSlabBold: string;
-      };
-
-      size: {
+      fontSize: {
         xs: string;
         sm: string;
         md: string;
@@ -37,6 +27,14 @@ declare module 'styled-components' {
         xl: string;
         xxl: string;
       };
+    };
+
+    fontFamily: {
+      RobotoSlabLight: string;
+      RobotoSlabRegular: string;
+      RobotoSlabMedium: string;
+      RobotoSlabSemiBold: string;
+      RobotoSlabBold: string;
     };
 
     colors: {

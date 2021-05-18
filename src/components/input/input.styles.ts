@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 export const Container = styled.View<{ borderColor?: string }>`
   width: 100%;
   height: 50px;
-  background-color: ${props => props.theme.colors.grayLight};
+  background-color: ${props => props.theme.colors.backgroundPrimary};
   border-color: ${props => props.borderColor || props.theme.colors.borderColor};
   border-radius: ${props => props.theme.borderRadius.md};
   align-items: center;
@@ -18,8 +18,8 @@ export const TextInput = styled.TextInput`
   height: 100%;
   color: ${props => props.theme.colors.textDark};
   font-size: 18px;
-  text-align: center;
   margin: 0 5px;
+  padding-left: 5px;
   letter-spacing: 1.1px;
-  font-family: ${props => props.theme.fonts.family.RobotoSlabRegular};
+  font-family: ${props => props.theme.fontFamily.RobotoSlabRegular};
 `;

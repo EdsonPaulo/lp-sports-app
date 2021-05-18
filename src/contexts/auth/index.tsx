@@ -12,7 +12,11 @@ import { Alert } from 'react-native';
 import constants from '../../constants/constants';
 
 import { mockToken, mockUser } from '../../constants/mocked-data';
-import { IUser } from '../../typescript/interfaces';
+import {
+  IUser,
+  SignInPayload,
+  SignUpPayload,
+} from '../../typescript/interfaces';
 import { AuthContextProps } from './auth.types';
 
 export const AuthContext = createContext<AuthContextProps | null>(null);
@@ -24,7 +28,7 @@ export const AuthContextProvider: FC = props => {
   const [isLoading, setISLoading] = useState(false);
 
   const signIn = useCallback(
-    async (phone: string, password: string) => {
+    async ({ phone, password }: SignInPayload) => {
       if (isLoading) return;
       // TODO: auth request to server
       console.log('Phone: ', phone, 'Password: ', password);
@@ -46,6 +50,37 @@ export const AuthContextProvider: FC = props => {
       }
     },
     [isLoading, token, user],
+  );
+
+  const signUp = useCallback(
+    async ({ phone, password, email, name }: SignUpPayload) => {
+      if (isLoading) return;
+      // TODO: auth request to server
+      console.log(phone, password, email, name);
+      const newUser: IUser = {
+        phone,
+        email,
+        name,
+        address: mockUser.address,
+      };
+      setISLoading(true);
+      try {
+        setTimeout(async () => {
+          await AsyncStorage.multiSet([
+            [constants.USER_KEY, JSON.stringify(newUser)],
+            [constants.TOKEN_KEY, token],
+          ]);
+          setUser(newUser);
+          setToken(mockToken);
+          setIsLogged(true);
+        }, 3000);
+      } catch (error) {
+        Alert.alert('Ocorreu um erro ao fazer cadastro!');
+      } finally {
+        setISLoading(false);
+      }
+    },
+    [isLoading, token],
   );
 
   const signOut = async () => {
@@ -89,10 +124,11 @@ export const AuthContextProvider: FC = props => {
       isLogged,
       isLoading,
       signIn,
+      signUp,
       signOut,
       retrieveToken,
     }),
-    [isLoading, isLogged, retrieveToken, signIn, token, user],
+    [isLoading, isLogged, retrieveToken, signIn, signUp, token, user],
   );
 
   return <AuthContext.Provider value={memoizedValue} {...props} />;

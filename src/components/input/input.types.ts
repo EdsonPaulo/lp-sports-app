@@ -1,6 +1,8 @@
+import { TextInputProps } from 'react-native';
+
 export type TInputType = 'phone' | 'email' | 'name' | 'password' | 'default';
 
-export interface InputProps {
+export interface InputProps extends TextInputProps {
   type?: TInputType;
   label?: string;
 }
@@ -16,7 +18,7 @@ export const getInputType = (
   switch (type) {
     case 'phone':
       keyboardType = 'phone-pad';
-      iconName = 'mobile';
+      iconName = 'smartphone';
       break;
     case 'password':
       keyboardType = 'default';

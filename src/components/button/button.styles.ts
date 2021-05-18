@@ -7,9 +7,8 @@ import { ButtonProps } from './button.types';
 export const StyledText = styled(Text)<{ primary?: boolean }>`
   color: ${props =>
     props.primary ? props.theme.colors.white : props.theme.colors.accent};
-  font-size: ${props => props.theme.fonts.size.lg};
-  font-family: ${props => props.theme.fonts.family.RobotoSlabMedium};
-  letter-spacing: 1px;
+  font-size: ${props => props.theme.metrics.fontSize.lg};
+  font-family: ${props => props.theme.fontFamily.RobotoSlabMedium};
   margin: 0 10px;
 `;
 

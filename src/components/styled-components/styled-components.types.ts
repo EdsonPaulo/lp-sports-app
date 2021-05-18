@@ -8,6 +8,11 @@ export type TJustifyContent =
 
 export type TAlignItems = 'center' | 'flex-end' | 'flex-start';
 
+export interface IFlex {
+  justifyContent?: TJustifyContent;
+  alignItems?: TAlignItems;
+}
+
 export interface IMargin {
   margin?: string;
   marginVertical?: string;

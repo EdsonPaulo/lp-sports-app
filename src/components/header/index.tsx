@@ -1,20 +1,32 @@
 import React, { FC } from 'react';
 import { TouchableOpacity } from 'react-native';
+import { StackHeaderProps } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
-import Icon from '@expo/vector-icons/AntDesign';
+import Icon from '@expo/vector-icons/Ionicons';
+import { useTheme } from 'styled-components/native';
 
 import { Container, StyledText } from './header.styles';
 import COLORS from '../../constants/colors';
 
-const Header: FC<{ label: string }> = ({ label }) => {
-  const navigation = useNavigation();
+const Header: FC<StackHeaderProps> = ({ ...restProps }) => {
+  const { goBack } = useNavigation();
+  const {
+    scene: {
+      descriptor: {
+        options: { title },
+      },
+    },
+  } = restProps;
+  const {
+    metrics: { iconSize },
+  } = useTheme();
 
   return (
     <Container>
-      <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.goBack()}>
-        <Icon name="swapleft" size={30} color={COLORS.white} />
+      <TouchableOpacity activeOpacity={0.7} onPress={goBack}>
+        <Icon name="chevron-back" size={iconSize.xxl} color={COLORS.textDark} />
       </TouchableOpacity>
-      <StyledText>{label}</StyledText>
+      {title && <StyledText>{title}</StyledText>}
     </Container>
   );
 };

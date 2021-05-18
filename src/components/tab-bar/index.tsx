@@ -9,8 +9,8 @@ import ROUTES from '../../constants/routes';
 import { TabBarContainer, TabOption } from './styles';
 
 const getIconNameForRoute = (routeName: string) => {
-  if (routeName === ROUTES.HOME) return 'home-outline';
-  if (routeName === ROUTES.WELCOME) return 'person-outline';
+  if (routeName === ROUTES.HOME) return 'home';
+  if (routeName === ROUTES.WELCOME) return 'person';
   return '';
 };
 
@@ -21,8 +21,7 @@ const TabBar: React.FC<BottomTabBarProps> = ({
 }) => {
   const {
     colors,
-    fonts,
-    metrics: { iconSize },
+    metrics: { iconSize, fontSize },
   } = useTheme();
 
   return (
@@ -39,24 +38,22 @@ const TabBar: React.FC<BottomTabBarProps> = ({
             target: route.key,
             canPreventDefault: true,
           });
-          if (!isFocused && !event.defaultPrevented) {
+          if (!isFocused && !event.defaultPrevented)
             navigation.navigate(route.name);
-          }
         };
 
         return (
           <TabOption key={v4()} onPress={onPress}>
             {isFocused ? (
               <>
-                <Text fontSize={fonts.size.md}>{label}</Text>
+                <Text fontSize={fontSize.md}>{label}</Text>
                 <Box width="4px" height="4px" backgroundColor={colors.accent} />
               </>
             ) : (
               <Feather
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                name={icon as any}
+                name={icon as never}
                 size={iconSize.md}
-                color={isFocused ? colors.primary : colors.grayDark}
+                color={isFocused ? colors.primary : colors.grayMedium}
               />
             )}
           </TabOption>

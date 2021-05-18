@@ -15,16 +15,13 @@ const LPTheme: DefaultTheme = {
     iconSize: {
       xs: 7,
       sm: 12,
-      md: 18,
+      md: 20,
       lg: 25,
       xl: 30,
       xxl: 45,
     },
-  },
 
-  fonts: {
-    family: FONT_FAMILY,
-    size: {
+    fontSize: {
       xs: '10px',
       sm: '12px',
       md: '14px',
@@ -33,6 +30,8 @@ const LPTheme: DefaultTheme = {
       xxl: '26px',
     },
   },
+
+  fontFamily: FONT_FAMILY,
 
   colors: {
     primary: COLORS.primary,

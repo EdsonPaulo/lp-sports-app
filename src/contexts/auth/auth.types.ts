@@ -1,4 +1,8 @@
-import { IUser } from '../../typescript/interfaces';
+import {
+  IUser,
+  SignInPayload,
+  SignUpPayload,
+} from '../../typescript/interfaces';
 
 export interface AuthContextProps {
   user: IUser | null;
@@ -6,7 +10,8 @@ export interface AuthContextProps {
   isLogged: boolean;
   isLoading: boolean;
 
-  signIn: (phone: string, password: string) => Promise<void>;
+  signIn: (payload: SignInPayload) => Promise<void>;
+  signUp: (payload: SignUpPayload) => Promise<void>;
   signOut: () => Promise<void>;
   retrieveToken: () => Promise<void>;
 }
