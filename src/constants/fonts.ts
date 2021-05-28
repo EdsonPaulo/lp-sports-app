@@ -1,9 +1,13 @@
 const FONT_FAMILY = {
-  MontserratLight: 'Montserrat_300Light',
-  MontserratRegular: 'Montserrat_400Regular',
-  MontserratMedium: 'Montserrat_500Medium',
-  MontserratSemiBold: 'Montserrat_600SemiBold',
-  MontserratBold: 'Montserrat_700Bold',
+  Lato: {
+    normal: 'Lato_400Regular',
+    bold: 'Lato_700Bold',
+    100: 'Lato_100Thin',
+    300: 'Lato_300Light',
+    400: 'Lato_400Regular',
+    700: 'Lato_700Bold',
+    900: 'Lato_900Black',
+  },
 };
 
 export default FONT_FAMILY;

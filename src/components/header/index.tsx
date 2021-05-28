@@ -1,12 +1,8 @@
+import { useNavigation } from '@react-navigation/native';
+import { StackHeaderProps } from '@react-navigation/stack';
 import React, { FC } from 'react';
 import { TouchableOpacity } from 'react-native';
-import { StackHeaderProps } from '@react-navigation/stack';
-import { useNavigation } from '@react-navigation/native';
-import Icon from '@expo/vector-icons/Ionicons';
-import { useTheme } from 'styled-components/native';
-
-import { Container, StyledText } from './header.styles';
-import COLORS from '../../constants/colors';
+import { Box, Icon as IconMagnus, Text } from 'react-native-magnus';
 
 const Header: FC<StackHeaderProps> = ({ ...restProps }) => {
   const { goBack } = useNavigation();
@@ -17,17 +13,31 @@ const Header: FC<StackHeaderProps> = ({ ...restProps }) => {
       },
     },
   } = restProps;
-  const {
-    metrics: { iconSize },
-  } = useTheme();
 
   return (
-    <Container>
-      <TouchableOpacity activeOpacity={0.7} onPress={goBack}>
-        <Icon name="chevron-back" size={iconSize.xxl} color={COLORS.textDark} />
+    <Box
+      p="lg"
+      mt="xl"
+      flexDir="row"
+      rounded="xs"
+      borderRightWidth={5}
+      borderRightColor="gray700"
+      alignItems="center"
+      justifyContent="space-between"
+    >
+      <TouchableOpacity activeOpacity={0.6} onPress={goBack}>
+        <IconMagnus
+          name="chevron-back"
+          fontFamily="Ionicons"
+          color="gray900"
+          fontSize="4xl"
+        />
       </TouchableOpacity>
-      {title && <StyledText>{title}</StyledText>}
-    </Container>
+
+      <Text mr="md" fontSize="5xl">
+        {title}
+      </Text>
+    </Box>
   );
 };
 

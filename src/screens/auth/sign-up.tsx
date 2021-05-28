@@ -1,28 +1,19 @@
 import { useNavigation } from '@react-navigation/core';
 import React, { useState } from 'react';
-import { Alert, KeyboardAvoidingView, Platform } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { useTheme } from 'styled-components/native';
-
 import {
-  Box,
-  Button,
-  Container,
-  Input,
-  RowView,
-  SafeArea,
-  Text,
-} from '../../components';
+  Alert,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+} from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Button, Box, Text } from 'react-native-magnus';
+
+import { TextInput, SafeArea } from '../../components';
 import ROUTES from '../../constants/routes';
 import { useAuthContext } from '../../contexts/auth';
 
-import { StyledScrollView } from './styles';
-
 const SignUp: React.FC = () => {
-  const {
-    colors,
-    metrics: { fontSize },
-  } = useTheme();
   const { isLoading, signUp } = useAuthContext();
   const { navigate } = useNavigation();
   const [name, setName] = useState('');
@@ -40,66 +31,62 @@ const SignUp: React.FC = () => {
   };
 
   return (
-    <SafeArea>
-      <Container justifyContent="space-between">
-        <Container />
+    <SafeArea bg="gray100">
+      <Box flex={1} justifyContent="space-between">
+        <Box />
         <KeyboardAvoidingView
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
           enabled
           style={{ flex: 1.7 }}
         >
-          <StyledScrollView
+          <ScrollView
             showsVerticalScrollIndicator={false}
             keyboardShouldPersistTaps="handled"
             contentContainerStyle={{ width: '100%', padding: 5 }}
           >
-            <Box alignItems="center" marginBottom="20px">
-              <Text fontSize={fontSize.lg}>
-                Informe seus dados para criar um conta
-              </Text>
+            <Box alignItems="center" mb="md">
+              <Text fontSize="2xl">Informe seus dados para criar um conta</Text>
             </Box>
 
-            <Input
+            <TextInput
               onChangeText={setName}
               type="name"
               placeholder="Nome e sobrenome"
             />
-            <Input
+            <TextInput
               onChangeText={setPhone}
               type="phone"
               placeholder="Telefone"
             />
-            <Input
+            <TextInput
               onChangeText={setEmail}
               type="email"
               placeholder="Seu email"
             />
-            <Input
+            <TextInput
               onChangeText={setPassword}
               type="password"
               placeholder="Palavra-passe"
             />
 
-            <RowView marginBottom="10px">
-              <Button
-                primary
-                isLoading={isLoading}
-                label="Iniciar Sessão"
-                onPress={handleSignUp}
-              />
-            </RowView>
+            <Box flexDir="row" mb="md">
+              <Button bg="crimson" loading={isLoading} onPress={handleSignUp}>
+                Criar conta
+              </Button>
+            </Box>
 
             <TouchableOpacity onPress={() => navigate(ROUTES.SIGN_IN)}>
-              <RowView justifyContent="center">
+              <Box flexDir="row" justifyContent="center">
                 <Text>Já tem uma conta?</Text>
-                <Text marginLeft="5px" color={colors.accent}>
+
+                <Text ml="xs" color="crimson">
                   Iniciar sessão
                 </Text>
-              </RowView>
+              </Box>
             </TouchableOpacity>
-          </StyledScrollView>
+          </ScrollView>
         </KeyboardAvoidingView>
-      </Container>
+      </Box>
     </SafeArea>
   );
 };

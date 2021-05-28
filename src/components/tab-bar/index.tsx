@@ -1,12 +1,10 @@
+import { Feather } from '@expo/vector-icons';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { useTheme } from 'styled-components';
+import { Box, Button, Text, useTheme } from 'react-native-magnus';
 import { v4 } from 'uuid';
-import { Feather } from '@expo/vector-icons';
 
-import { Box, Text } from '../styled-components';
 import ROUTES from '../../constants/routes';
-import { TabBarContainer, TabOption } from './styles';
 
 const getIconNameForRoute = (routeName: string) => {
   if (routeName === ROUTES.HOME) return 'home';
@@ -20,12 +18,19 @@ const TabBar: React.FC<BottomTabBarProps> = ({
   navigation,
 }) => {
   const {
-    colors,
-    metrics: { iconSize, fontSize },
-  } = useTheme();
+    theme: { colors, fontSize },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } = useTheme() as any;
 
   return (
-    <TabBarContainer>
+    <Box
+      p="sm"
+      h="50px"
+      bg="white"
+      flexDir="row"
+      alignItems="center"
+      justifyContent="space-between"
+    >
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const label = options.tabBarLabel?.toString() || options.title;
@@ -43,23 +48,36 @@ const TabBar: React.FC<BottomTabBarProps> = ({
         };
 
         return (
-          <TabOption key={v4()} onPress={onPress}>
+          <Button
+            key={v4()}
+            flex={1}
+            my="md"
+            h="100%"
+            rounded="sm"
+            flexDir="column"
+            bg="transparent"
+            alignItems="center"
+            justifyContent="center"
+            onPress={onPress}
+          >
             {isFocused ? (
               <>
-                <Text fontSize={fontSize.md}>{label}</Text>
-                <Box width="4px" height="4px" backgroundColor={colors.accent} />
+                <Text fontSize="lg" color={isFocused ? 'crimson' : 'gray900'}>
+                  {label}
+                </Text>
+                <Box mt="xs" w={8} h={8} bg="crimson" rounded="circle" />
               </>
             ) : (
               <Feather
                 name={icon as never}
-                size={iconSize.md}
-                color={isFocused ? colors.primary : colors.grayMedium}
+                size={fontSize.md}
+                color={isFocused ? colors.crimson : colors.gray600}
               />
             )}
-          </TabOption>
+          </Button>
         );
       })}
-    </TabBarContainer>
+    </Box>
   );
 };
 

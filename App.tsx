@@ -3,17 +3,16 @@ import 'react-native-get-random-values';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React from 'react';
 import { enableScreens } from 'react-native-screens';
-import { ThemeProvider } from 'styled-components/native';
-import { ThemeProvider as MangnusThemeProvider } from 'react-native-magnus';
+import { ThemeProvider } from 'react-native-magnus';
 import AppLoading from 'expo-app-loading';
 import {
   useFonts,
-  Montserrat_300Light,
-  Montserrat_400Regular,
-  Montserrat_500Medium,
-  Montserrat_600SemiBold,
-  Montserrat_700Bold,
-} from '@expo-google-fonts/montserrat';
+  Lato_100Thin,
+  Lato_300Light,
+  Lato_400Regular,
+  Lato_700Bold,
+  Lato_900Black,
+} from '@expo-google-fonts/lato';
 
 import theme from './src/constants/theme';
 import { AuthContextProvider } from './src/contexts/auth';
@@ -23,23 +22,21 @@ enableScreens();
 
 const App = () => {
   const [fontsLoaded] = useFonts({
-    Montserrat_300Light,
-    Montserrat_400Regular,
-    Montserrat_500Medium,
-    Montserrat_600SemiBold,
-    Montserrat_700Bold,
+    Lato_100Thin,
+    Lato_300Light,
+    Lato_400Regular,
+    Lato_700Bold,
+    Lato_900Black,
   });
 
   if (!fontsLoaded) return <AppLoading />;
   return (
     <ThemeProvider theme={theme}>
-      <MangnusThemeProvider>
-        <SafeAreaProvider>
-          <AuthContextProvider>
-            <Routes />
-          </AuthContextProvider>
-        </SafeAreaProvider>
-      </MangnusThemeProvider>
+      <SafeAreaProvider>
+        <AuthContextProvider>
+          <Routes />
+        </AuthContextProvider>
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 };

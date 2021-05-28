@@ -1,8 +1,8 @@
-import { TextInputProps } from 'react-native';
+import { InputProps } from 'react-native-magnus';
 
 export type TInputType = 'phone' | 'email' | 'name' | 'password' | 'default';
 
-export interface InputProps extends TextInputProps {
+export interface TextInputProps extends InputProps {
   type?: TInputType;
   label?: string;
 }

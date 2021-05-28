@@ -1,15 +1,14 @@
 import React from 'react';
+import { Text } from 'react-native-magnus';
 
-import { SafeArea, Container, H1, Text } from '../../components';
+import { SafeArea } from '../../components';
 
 const Home: React.FC = () => {
   return (
     <SafeArea>
-      <Container>
-        <H1 fontSize="40px">LP SPORTS</H1>
-        <H1>Open up App.tsx!</H1>
-        <Text>Open up App.tsx to start working on your app!</Text>
-      </Container>
+      <Text fontSize="6xl">LP SPORTS</Text>
+      <Text fontSize="2xl">Open up App.tsx!</Text>
+      <Text>Open up App.tsx to start working on your app!</Text>
     </SafeArea>
   );
 };

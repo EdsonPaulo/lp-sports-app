@@ -14,7 +14,7 @@
     "noImplicitAny": true,
     "resolveJsonModule": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": true
   },
   "typeRoots": ["node_modules/@types", "src/typescript/types"],
   "types": ["jest", "styled-components-react-native"],
