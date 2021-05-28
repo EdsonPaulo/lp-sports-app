@@ -30,11 +30,11 @@ declare module 'styled-components' {
     };
 
     fontFamily: {
-      RobotoSlabLight: string;
-      RobotoSlabRegular: string;
-      RobotoSlabMedium: string;
-      RobotoSlabSemiBold: string;
-      RobotoSlabBold: string;
+      MontserratLight: string;
+      MontserratRegular: string;
+      MontserratMedium: string;
+      MontserratSemiBold: string;
+      MontserratBold: string;
     };
 
     colors: {

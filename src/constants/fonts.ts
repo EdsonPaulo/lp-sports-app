@@ -1,9 +1,9 @@
 const FONT_FAMILY = {
-  RobotoSlabLight: 'RobotoSlab_300Light',
-  RobotoSlabRegular: 'RobotoSlab_400Regular',
-  RobotoSlabMedium: 'RobotoSlab_500Medium',
-  RobotoSlabSemiBold: 'RobotoSlab_600SemiBold',
-  RobotoSlabBold: 'RobotoSlab_700Bold',
+  MontserratLight: 'Montserrat_300Light',
+  MontserratRegular: 'Montserrat_400Regular',
+  MontserratMedium: 'Montserrat_500Medium',
+  MontserratSemiBold: 'Montserrat_600SemiBold',
+  MontserratBold: 'Montserrat_700Bold',
 };
 
 export default FONT_FAMILY;

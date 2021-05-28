@@ -21,5 +21,5 @@ export const TextInput = styled.TextInput`
   margin: 0 5px;
   padding-left: 5px;
   letter-spacing: 1.1px;
-  font-family: ${props => props.theme.fontFamily.RobotoSlabRegular};
+  font-family: ${props => props.theme.fontFamily.MontserratRegular};
 `;

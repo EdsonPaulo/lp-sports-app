@@ -46,13 +46,13 @@ export const Text = styled.Text<IMargin & IColor & ITextProps>`
   color: ${props => props.color || props.theme.colors.textDark};
   font-size: ${props => props.fontSize || props.theme.metrics.fontSize.md};
   text-align: ${props => props.textAlign || 'center'};
-  font-family: ${props => props.theme.fontFamily.RobotoSlabRegular};
+  font-family: ${props => props.theme.fontFamily.MontserratRegular};
   background-color: ${props => props.backgroundColor || 'transparent'};
 `;
 
 export const H1 = styled(Text)`
   font-size: ${props => props.fontSize || props.theme.metrics.fontSize.xxl};
-  font-family: ${props => props.theme.fontFamily.RobotoSlabSemiBold};
+  font-family: ${props => props.theme.fontFamily.MontserratSemiBold};
 `;
 
 export const SafeArea = styled(SafeAreaView)<IColor>`

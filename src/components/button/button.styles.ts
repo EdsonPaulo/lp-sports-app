@@ -8,7 +8,7 @@ export const StyledText = styled(Text)<{ primary?: boolean }>`
   color: ${props =>
     props.primary ? props.theme.colors.white : props.theme.colors.accent};
   font-size: ${props => props.theme.metrics.fontSize.lg};
-  font-family: ${props => props.theme.fontFamily.RobotoSlabMedium};
+  font-family: ${props => props.theme.fontFamily.MontserratMedium};
   margin: 0 10px;
 `;
 
