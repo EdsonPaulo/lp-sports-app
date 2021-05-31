@@ -3,7 +3,12 @@ import FONT_FAMILY from './fonts';
 
 const LPTheme = {
   fontFamily: FONT_FAMILY.Lato,
-
+  fontSize: {
+    xs: 13,
+    sm: 14,
+    md: 15,
+    lg: 16,
+  },
   colors: {
     primary: COLORS.primary,
     secondary: COLORS.secondary,
