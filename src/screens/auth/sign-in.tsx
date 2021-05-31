@@ -9,7 +9,7 @@ import {
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Button, Box, Text } from 'react-native-magnus';
 
-import { TextInput, SafeArea } from '../../components';
+import { TextInput, SafeArea, Header } from '../../components';
 import ROUTES from '../../constants/routes';
 import { useAuthContext } from '../../contexts/auth';
 
@@ -29,30 +29,22 @@ const SignIn: React.FC = () => {
   };
 
   return (
-    <SafeArea bg="gray100" justifyContent="space-between">
-      <Box />
+    <SafeArea pb="2xl" bg="white" justifyContent="space-between">
+      <Header allowGoBack title={ROUTES.SIGN_IN} />
+
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         enabled
-        style={{ flex: 1.7 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
         <ScrollView
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ width: '100%', padding: 5 }}
+          contentContainerStyle={{ padding: 5 }}
         >
-          <Box
-            p="xl"
-            w="100%"
-            bg="white"
-            borderWidth={1}
-            borderColor="gray300"
-            roundedTopRight="lg"
-            roundedTopLeft="lg"
-          >
-            <Box alignItems="center" mb="md">
-              <Text fontSize="2xl">Bem - Vindo</Text>
-            </Box>
+          <Box p="2xl">
+            <Text mb="2xl" fontSize="2xl" textAlign="center">
+              Bem - Vindo
+            </Text>
 
             <TextInput
               mb="lg"
@@ -60,6 +52,7 @@ const SignIn: React.FC = () => {
               type="phone"
               placeholder="Telefone"
             />
+
             <TextInput
               onChangeText={setPassword}
               type="password"
@@ -67,28 +60,32 @@ const SignIn: React.FC = () => {
             />
 
             <TouchableOpacity onPress={() => navigate(ROUTES.SIGN_UP)}>
-              <Box my="sm" alignItems="flex-end">
-                <Text color="gray900">Esqueceu a senha?</Text>
-              </Box>
+              <Text my="lg" textAlign="right" color="gray900">
+                Esqueceu a senha?
+              </Text>
             </TouchableOpacity>
 
-            <Box flexDir="row" mb="md">
-              <Button bg="crimson" loading={isLoading} onPress={handleSignIn}>
-                Iniciar Sessão
-              </Button>
-            </Box>
-
-            <TouchableOpacity onPress={() => navigate(ROUTES.SIGN_UP)}>
-              <Box flexDir="row" justifyContent="center">
-                <Text>Não tem conta?</Text>
-                <Text ml="xs" color="crimson">
-                  Fazer cadastro
-                </Text>
-              </Box>
-            </TouchableOpacity>
+            <Button
+              block
+              bg="crimson"
+              rounded="lg"
+              loading={isLoading}
+              onPress={handleSignIn}
+            >
+              Iniciar Sessão
+            </Button>
           </Box>
         </ScrollView>
       </KeyboardAvoidingView>
+
+      <TouchableOpacity onPress={() => navigate(ROUTES.SIGN_UP)}>
+        <Box flexDir="row" justifyContent="center">
+          <Text>Não tem conta?</Text>
+          <Text ml="xs" color="crimson">
+            Fazer cadastro
+          </Text>
+        </Box>
+      </TouchableOpacity>
     </SafeArea>
   );
 };
