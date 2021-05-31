@@ -26,6 +26,7 @@ const TextInput: FC<TextInputProps> = ({ type, ...rest }) => {
     <Input
       p="lg"
       bg="gray100"
+      rounded="lg"
       focusBorderColor="blue700"
       secureTextEntry={secureText}
       keyboardType={keyboardType as never}
