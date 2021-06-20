@@ -25,12 +25,12 @@ const TextInput: FC<TextInputProps> = ({ type, ...rest }) => {
   return (
     <Input
       p="lg"
-      bg="gray100"
+      bg="gray200"
       rounded="lg"
       focusBorderColor="blue700"
       secureTextEntry={secureText}
       keyboardType={keyboardType as never}
-      placeholderTextColor="gray500"
+      placeholderTextColor="gray600"
       prefix={
         iconName ? (
           <Icon

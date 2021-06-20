@@ -4,7 +4,7 @@ import { TouchableOpacity } from 'react-native';
 import { Box, Icon as IconMagnus, Text } from 'react-native-magnus';
 
 const Header: FC<{
-  title: string;
+  title?: string;
   allowGoBack?: boolean;
 }> = ({ title, allowGoBack }) => {
   const { goBack } = useNavigation();
@@ -14,8 +14,6 @@ const Header: FC<{
       p="lg"
       flexDir="row"
       rounded="xs"
-      borderRightWidth={3}
-      borderRightColor="gray700"
       alignItems="center"
       justifyContent="space-between"
     >
@@ -30,7 +28,13 @@ const Header: FC<{
         </TouchableOpacity>
       )}
 
-      <Text mr="md" fontSize="5xl">
+      <Text
+        mr="md"
+        fontSize="4xl"
+        fontWeight="bold"
+        borderRightWidth={3}
+        borderRightColor="gray700"
+      >
         {title}
       </Text>
     </Box>
