@@ -17,10 +17,11 @@ And folow the terminal instructions...
 ## App Screenshots
 
 <div style="width: 100%">
-   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/LadingScreen.png" width="33%" /> 
-   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/RegisterScreen.png" width="33%" /> 
-   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/SportSelection.png" width="33%" /> 
-   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/HomeScreen.png" width="33%" /> 
-   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/ProfileScreen.png" width="33%" /> 
-   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/notification_subscription.png" width="33%" /> 
+   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/LadingScreen.png" /> 
+   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/LoginScreen.png" /> 
+   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/RegisterScreen.png" /> 
+   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/SportSelection.png" /> 
+   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/HomeScreen.png"  /> 
+   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/ProfileScreen.png"  /> 
+   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/notification_subscription.png" /> 
 </div>
