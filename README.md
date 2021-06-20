@@ -16,10 +16,10 @@ And folow the terminal instructions...
 <br>
 ## App Screenshots
 
-<div style="width: 100%">
-   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/LadingScreen.png" /> 
-   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/RegisterScreen.png" /> 
-   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/SportSelection.png" /> 
-   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/HomeScreen.png"  /> 
-   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/ProfileScreen.png"  /> 
+<div style="width: 100%; display: flex">
+   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/LadingScreen.png" style="flex: 1" /> 
+   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/RegisterScreen.png" style="flex: 1" /> 
+   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/SportSelection.png" style="flex: 1" /> 
+   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/HomeScreen.png" style="flex: 1"  /> 
+   <img src="https://github.com/EdsonPaulo/lp-sports-app/blob/main/screenshots/ProfileScreen.png" style="flex: 1"  /> 
 </div>
