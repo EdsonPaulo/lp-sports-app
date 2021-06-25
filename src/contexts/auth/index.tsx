@@ -42,7 +42,7 @@ export const AuthContextProvider: FC = props => {
           setUser(mockUser);
           setToken(mockToken);
           setIsLogged(true);
-        }, 3000);
+        }, 1000);
       } catch (error) {
         Alert.alert('Ocorreu um erro ao iniciar sessão!');
       } finally {
@@ -72,8 +72,8 @@ export const AuthContextProvider: FC = props => {
           ]);
           setUser(newUser);
           setToken(mockToken);
-          setIsLogged(true);
-        }, 3000);
+          // setIsLogged(false);
+        }, 2000);
       } catch (error) {
         Alert.alert('Ocorreu um erro ao fazer cadastro!');
       } finally {
