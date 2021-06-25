@@ -28,6 +28,7 @@ const SignUp: React.FC = () => {
       return;
     }
     await signUp({ name, phone, email, password });
+    navigate(ROUTES.SELECT_SPORT);
   };
 
   return (
@@ -75,6 +76,7 @@ const SignUp: React.FC = () => {
             />
 
             <Button
+              mt="xl"
               block
               bg="crimson"
               rounded="lg"

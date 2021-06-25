@@ -3,7 +3,7 @@ import React from 'react';
 
 import { TabBar } from '../../components';
 import ROUTES from '../../constants/routes';
-import { HomeScreen } from '../../screens';
+import { HomeScreen, ProfileScreen } from '../../screens';
 
 const TabRoutes = () => {
   const Tabs = createBottomTabNavigator();
@@ -16,6 +16,12 @@ const TabRoutes = () => {
         name={ROUTES.HOME}
         component={HomeScreen}
         options={{ tabBarLabel: ROUTES.HOME }}
+      />
+
+      <Tabs.Screen
+        name={ROUTES.PROFILE}
+        component={ProfileScreen}
+        options={{ tabBarLabel: ROUTES.PROFILE }}
       />
     </Tabs.Navigator>
   );
