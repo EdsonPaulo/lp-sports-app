@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, TouchableOpacity } from 'react-native';
+import { ScrollView } from 'react-native';
 import { Box, Image } from 'react-native-magnus';
 import Icon from '@expo/vector-icons/Feather';
 
@@ -32,7 +32,10 @@ const Home: React.FC = () => {
             <Box row alignItems="center">
               <Icon name="search" size={20} color="gray800" />
               <Box mx="md" />
-              <Icon name="bell" size={20} color="gray800" />
+              <Box>
+                <Icon name="bell" size={20} color="gray800" />
+                <Box mt="xs" w={6} h={6} bg="crimson" rounded="circle" />
+              </Box>
             </Box>
           }
         />
