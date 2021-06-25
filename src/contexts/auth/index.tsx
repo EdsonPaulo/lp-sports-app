@@ -42,7 +42,7 @@ export const AuthContextProvider: FC = props => {
           setUser(mockUser);
           setToken(mockToken);
           setIsLogged(true);
-        }, 1000);
+        }, 300);
       } catch (error) {
         Alert.alert('Ocorreu um erro ao iniciar sessão!');
       } finally {

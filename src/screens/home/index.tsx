@@ -34,7 +34,16 @@ const Home: React.FC = () => {
               <Box mx="md" />
               <Box>
                 <Icon name="bell" size={20} color="gray800" />
-                <Box mt="xs" w={6} h={6} bg="crimson" rounded="circle" />
+                <Box
+                  mt="xs"
+                  w={8}
+                  h={8}
+                  top={-5}
+                  right={0}
+                  bg="crimson"
+                  position="absolute"
+                  rounded="circle"
+                />
               </Box>
             </Box>
           }
