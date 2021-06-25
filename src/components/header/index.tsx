@@ -6,7 +6,8 @@ import { Box, Icon as IconMagnus, Text } from 'react-native-magnus';
 const Header: FC<{
   title?: string;
   allowGoBack?: boolean;
-}> = ({ title, allowGoBack }) => {
+  leftItem?: React.ReactElement;
+}> = ({ title, allowGoBack, leftItem }) => {
   const { goBack } = useNavigation();
 
   return (
@@ -37,6 +38,8 @@ const Header: FC<{
       >
         {title}
       </Text>
+
+      {leftItem}
     </Box>
   );
 };

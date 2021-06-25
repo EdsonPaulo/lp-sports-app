@@ -8,7 +8,7 @@ import ROUTES from '../../constants/routes';
 
 const getIconNameForRoute = (routeName: string) => {
   if (routeName === ROUTES.HOME) return 'home';
-  if (routeName === ROUTES.WELCOME) return 'person';
+  if (routeName === ROUTES.PROFILE) return 'user';
   return '';
 };
 
@@ -24,12 +24,12 @@ const TabBar: React.FC<BottomTabBarProps> = ({
 
   return (
     <Box
-      p="sm"
-      h="50px"
+      row
+      h={55}
       bg="white"
-      flexDir="row"
       alignItems="center"
-      justifyContent="space-between"
+      borderColor="gray400"
+      borderTopWidth={1}
     >
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
@@ -51,7 +51,7 @@ const TabBar: React.FC<BottomTabBarProps> = ({
           <Button
             key={v4()}
             flex={1}
-            my="md"
+            // my="md"
             h="100%"
             rounded="sm"
             flexDir="column"
@@ -65,12 +65,12 @@ const TabBar: React.FC<BottomTabBarProps> = ({
                 <Text fontSize="lg" color={isFocused ? 'crimson' : 'gray900'}>
                   {label}
                 </Text>
-                <Box mt="xs" w={8} h={8} bg="crimson" rounded="circle" />
+                <Box mt="xs" w={6} h={6} bg="crimson" rounded="circle" />
               </>
             ) : (
               <Feather
                 name={icon as never}
-                size={fontSize.md}
+                size={25}
                 color={isFocused ? colors.crimson : colors.gray600}
               />
             )}
