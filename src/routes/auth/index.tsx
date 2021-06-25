@@ -15,7 +15,7 @@ const AuthNavigation = () => {
   const AuthStack = createStackNavigator();
   return (
     <AuthStack.Navigator screenOptions={{ headerShown: false }}>
-      <AuthStack.Screen name={ROUTES.WELCOME} component={SelectSportScreen} />
+      <AuthStack.Screen name={ROUTES.WELCOME} component={WelcomeScreen} />
       <AuthStack.Screen name={ROUTES.SIGN_IN} component={SignInScreen} />
       <AuthStack.Screen name={ROUTES.SIGN_UP} component={SignUpScreen} />
       <AuthStack.Screen
